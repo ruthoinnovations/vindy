@@ -1,0 +1,63 @@
+<html>
+<head>
+  <title>To Brainy</title>
+  <link rel="stylesheet" href="lov.css">
+</head>
+<body>
+
+  <audio autoplay>
+    <source src="./narinyarim.mp3" type="audio/mpeg">
+  </audio>
+
+<div class="bg_heart">
+</div>
+
+<div class="container">
+ 
+
+<h2 id="text1"></h2>
+
+
+  </div>
+  
+<script>
+    var love = setInterval(function(){
+  var r_num = Math.floor(Math.random() * 40) + 1;
+	var r_size = Math.floor(Math.random() * 65) + 10;
+	var r_left = Math.floor(Math.random() * 100) + 1;
+	var r_bg = Math.floor(Math.random() * 25) + 100;
+  var r_time = Math.floor(Math.random() * 5) + 5;
+  $('.bg_heart').append("<div class='heart' style='width:"+r_size+"px;height:"+r_size+"px;left:"+r_left+"%;background:rgba(255,"+(r_bg-25)+","+r_bg+",1);-webkit-animation:love "+r_time+"s ease;-moz-animation:love "+r_time+"s ease;-ms-animation:love "+r_time+"s ease;animation:love "+r_time+"s ease'></div>");
+  
+  $('.bg_heart').append("<div class='heart' style='width:"+(r_size-10)+"px;height:"+(r_size-10)+"px;left:"+(r_left+r_num)+"%;background:rgba(255,"+(r_bg-25)+","+(r_bg+25)+",1);-webkit-animation:love "+(r_time+5)+"s ease;-moz-animation:love "+(r_time+5)+"s ease;-ms-animation:love "+(r_time+5)+"s ease;animation:love "+(r_time+5)+"s ease'></div>");
+  
+  
+},500);
+
+
+var i = 0;
+var txt1 = "Hi Brainy Devindy Fernando....!  <<               I've got something special for you! <<<                Yeah thats right! You alreay know what I'm up to...!                                                                           > It all started with a random story on instagram, bringing back the good old memories of us having fun in the school van.  <<                  It's true you didn't knew back then that I had a crush on you. < But I did! <<                           I didn't wanna ruin stuff back then cuz I thought we were too little to date!                                                     > But now, as we have grown up, I guess it is the perfect time to make my move!                     << I believe it is the fate that has brought me and you back together after a long time! Nobody knows this but, I did search for you after I left school but you were not to be seen on social media! I didnt ask anyone cuz I wanna keep it private.                                                     > You are the one person who I can honeslty see myslef happy with !                    << The definition of love to me.....                                                             >Is you!! |                  <<<< I love you Brainy!!";
+var speed = 70;
+typeWriter();
+function typeWriter() {
+  if (i < txt1.length) {        
+     if(txt1.charAt(i)=='<')
+      document.getElementById("text1").innerHTML += '</br>'
+    else if(txt1.charAt(i)=='>')
+      document.getElementById("text1").innerHTML = ''
+    else if(txt1.charAt(i)=='|')
+      {
+        $(".bg_heart").css("background-image","url('https://wallpaperaccess.com/full/3582429.jpg')");
+
+      }
+    else
+      document.getElementById("text1").innerHTML += txt1.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+</html>
